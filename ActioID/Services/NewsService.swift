@@ -1,9 +1,14 @@
-import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class NewsService {
-    static let shared = NewsService()
+    private let firestoreService = FirestoreService()
 
-    func fetchArticles(completion: @escaping ([Article]) -> Void) {
-        // Implement API call to fetch articles
+    func fetchNewsArticles(completion: @escaping ([NewsArticle]?) -> Void) {
+        firestoreService.fetchDocuments(from: "newsArticles", completion: completion)
+    }
+
+    func addNewsArticle(_ article: NewsArticle, completion: @escaping (Bool) -> Void) {
+        firestoreService.addDocument(article, to: "newsArticles", completion: completion)
     }
 }

@@ -1,8 +1,16 @@
-//
-//  UserService.swift
-//  ActioID
-//
-//  Created by Mariia Tsymberh on 26.06.24.
-//
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-import Foundation
+class UserService {
+    private let firestoreService = FirestoreService()
+
+    func fetchUserProfile(userId: String, completion: @escaping (UserProfile?) -> Void) {
+        firestoreService.fetchDocuments(from: "users") { (users: [UserProfile]?) in
+            completion(users?.first(where: { $0.id == userId }))
+        }
+    }
+
+    func addUserProfile(_ profile: UserProfile, completion: @escaping (Bool) -> Void) {
+        firestoreService.addDocument(profile, to: "users", completion: completion)
+    }
+}

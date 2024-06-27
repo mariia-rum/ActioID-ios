@@ -1,17 +1,32 @@
-import Foundation
+import FirebaseAuth
 
 class AuthService {
-    static let shared = AuthService()
-
-    func sendOTP(email: String, phone: String, completion: @escaping (Bool) -> Void) {
-        // Implement API call to send OTP
+    func signIn(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(false, error.localizedDescription)
+            } else {
+                completion(true, nil)
+            }
+        }
     }
 
-    func verifyOTP(otp: String, completion: @escaping (Bool) -> Void) {
-        // Implement API call to verify OTP
+    func signUp(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(false, error.localizedDescription)
+            } else {
+                completion(true, nil)
+            }
+        }
     }
 
-    func register(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        // Implement API call to register user
+    func signOut(completion: @escaping (Bool, String?) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(true, nil)
+        } catch let signOutError as NSError {
+            completion(false, signOutError.localizedDescription)
+        }
     }
 }

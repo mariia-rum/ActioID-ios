@@ -4,23 +4,23 @@ import FirebaseFirestoreSwift
 class FirestoreService {
     private let db = Firestore.firestore()
 
-    func fetchNewsArticles(completion: @escaping ([NewsArticle]?) -> Void) {
-        db.collection("newsArticles").getDocuments { (snapshot, error) in
+    func fetchDocuments<T: Decodable>(from collection: String, completion: @escaping ([T]?) -> Void) {
+        db.collection(collection).getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error fetching documents: \(error)")
                 completion(nil)
             } else {
-                let articles = snapshot?.documents.compactMap { document -> NewsArticle? in
-                    try? document.data(as: NewsArticle.self)
+                let documents = snapshot?.documents.compactMap { document -> T? in
+                    try? document.data(as: T.self)
                 }
-                completion(articles)
+                completion(documents)
             }
         }
     }
 
-    func addNewsArticle(_ article: NewsArticle, completion: @escaping (Bool) -> Void) {
+    func addDocument<T: Encodable>(_ document: T, to collection: String, completion: @escaping (Bool) -> Void) {
         do {
-            _ = try db.collection("newsArticles").addDocument(from: article)
+            _ = try db.collection(collection).addDocument(from: document)
             completion(true)
         } catch {
             print("Error adding document: \(error)")
