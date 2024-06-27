@@ -20,6 +20,10 @@ DerivedData/
 Pods/
 Podfile.lock
 
+# Swift Package Manager
+.swiftpm/
+.build/
+
 # Carthage
 Carthage/Build/
 
@@ -28,6 +32,30 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+*.lock
 
-Podfile
-Podfile.lock
+# Xcode-specific files
+*.xcuserstate
+*.xcscmblueprint
+
+# User-specific files
+*.xcuserdatad
+
+# Other
+ActiolD.xcodeproj/project.pbxproj
+ActiolD.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+ActiolD.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+ActiolD.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad
+ActiolD.xcodeproj/xcshareddata/xcschemes/*.xcscheme
+ActiolD.xcodeproj/xcuserdata/*.xcuserdatad/xcschemes/xcschememanagement.plist
+ActiolD.xcworkspace/contents.xcworkspacedata
+ActiolD.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+ActiolD.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+
+# Ignore build files
+Build/
+ActiolD_*.txt
+
+# GoogleService-Info.plist
+GoogleService-Info.plist
+
