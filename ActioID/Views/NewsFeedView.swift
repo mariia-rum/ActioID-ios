@@ -20,7 +20,6 @@ struct NewsFeedView: View {
                     Spacer().frame(height: 50)
                     Text("News")
                         .font(.largeTitle).bold()
-                        .padding(.bottom, 20)
                     SearchBar(text: $searchText)
                         .padding(.horizontal, 20)
                         .frame(height: 60)
@@ -29,14 +28,13 @@ struct NewsFeedView: View {
                 .padding(.horizontal, 20)
                 
                 ScrollView {
-                    LazyVStack(alignment: .leading) { // Aligning the content to the leading edge
+                    LazyVStack(alignment: .leading) {
                         ForEach(filteredArticles) { article in
                             NavigationLink(destination: ArticleDetailsView(article: article)) {
                                 ArticleRow(article: article)
                                     .background(lightBackgroundColor)
                                     .cornerRadius(10)
                                     .padding(.horizontal, 10)
-                                    .padding(.vertical, 5)
                             }
                         }
                     }
@@ -66,13 +64,15 @@ struct ArticleRow: View {
                     .frame(width: 50, height: 50)
                     .cornerRadius(8)
                     .padding(4)
+                    .padding(.top, 4)
             } placeholder: {
                 ProgressView().frame(width: 50, height: 50)
             }
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading) {
                 Text(article.title)
                     .font(.headline)
+                    .padding(.top, 4)
                     .multilineTextAlignment(.leading)
                     .frame(width: 330, alignment: .leading)
                     .lineLimit(nil)
