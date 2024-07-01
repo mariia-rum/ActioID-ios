@@ -5,72 +5,91 @@ struct NewsFeedView: View {
     @State private var searchText = ""
 
     var filteredArticles: [NewsArticles] {
-        if searchText.isEmpty {
-            return viewModel.articles
-        } else {
-            return viewModel.articles.filter { article in
-                article.title.lowercased().contains(searchText.lowercased()) ||
-                article.description.lowercased().contains(searchText.lowercased())
-            }
+        searchText.isEmpty ? viewModel.articles : viewModel.articles.filter {
+            $0.title.lowercased().contains(searchText.lowercased()) ||
+            $0.description.lowercased().contains(searchText.lowercased())
         }
     }
+
+    private let lightBackgroundColor = Color(red: 0xED/255, green: 0xE6/255, blue: 0xD7/255).opacity(0.2) // Predefined color
 
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 VStack {
-                    Spacer().frame(height: 20)
+                    Spacer().frame(height: 50)
                     Text("News")
-                        .font(.largeTitle)
-                        .bold()
-                        .padding(.bottom, 10)
+                        .font(.largeTitle).bold()
+                        .padding(.bottom, 20)
                     SearchBar(text: $searchText)
-                        .padding(.horizontal, 10)
-                        .frame(width: 370, height: 70)
+                        .padding(.horizontal, 20)
+                        .frame(height: 60)
                         .background(Color(.clear))
                 }
                 .padding(.horizontal, 20)
                 
-                List(filteredArticles) { article in
-                    NavigationLink(destination: ArticleDetailsView(article: article)) {
-                        HStack {
-                            AsyncImage(url: URL(string: "https://www.bmj.de/SiteGlobals/Frontend/Images/logo-newsletter.jpg?__blob=normal")) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 50, height: 50)
-                                    .cornerRadius(8)
-                                    .padding(.trailing, 8)
-                            } placeholder: {
-                                ProgressView()
-                                    .frame(width: 50, height: 50)
-                            }
-
-                            VStack(alignment: .leading) {
-                                Text(article.title)
-                                    .font(.headline)
-                                Text(article.pubDate)
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
+                ScrollView {
+                    LazyVStack(alignment: .leading) { // Aligning the content to the leading edge
+                        ForEach(filteredArticles) { article in
+                            NavigationLink(destination: ArticleDetailsView(article: article)) {
+                                ArticleRow(article: article)
+                                    .background(lightBackgroundColor)
+                                    .cornerRadius(10)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
                             }
                         }
                     }
-                    .onAppear {
-                        print("Displaying article: \(article.id ?? "No ID") - \(article.title)")
-                    }
+                    .background(lightBackgroundColor)
                 }
-                .background(Color(red: 0xED/255, green: 0xE6/255, blue: 0xD7/255).opacity(0.3)) // Lighter background color
             }
-            .background(Color.white) // Background for the whole view
+            .background(Color.white)
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 viewModel.fetchNews()
             }
         }
-        .background(Color.white) // Ensure the navigation view has the correct background
+        .background(Color.white)
     }
 }
+
+struct ArticleRow: View {
+    let article: NewsArticles
+
+    var body: some View {
+        HStack(alignment: .top) {
+            AsyncImage(url: URL(string: "https://www.bmj.de/SiteGlobals/Frontend/Images/logo-newsletter.jpg?__blob=normal")) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 50, height: 50)
+                    .cornerRadius(8)
+                    .padding(4)
+            } placeholder: {
+                ProgressView().frame(width: 50, height: 50)
+            }
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(article.title)
+                    .font(.headline)
+                    .multilineTextAlignment(.leading)
+                    .frame(width: 330, alignment: .leading)
+                    .lineLimit(nil)
+
+                Text(article.pubDate)
+                    .font(.subheadline)
+                    .frame(height: 30, alignment: .leading)
+                    .foregroundColor(.gray)
+            }
+        }
+        .padding(.vertical, 8)
+        .onAppear {
+            print("Displaying article: \(article.id ?? "No ID") - \(article.title)")
+        }
+    }
+}
+
 
 struct SearchBar: UIViewRepresentable {
     @Binding var text: String
@@ -96,7 +115,7 @@ struct SearchBar: UIViewRepresentable {
         searchBar.delegate = context.coordinator
         searchBar.placeholder = "Search Articles"
         searchBar.searchBarStyle = .minimal
-        searchBar.backgroundImage = UIImage() // Remove background for custom styling
+        searchBar.backgroundImage = UIImage()
         return searchBar
     }
 
