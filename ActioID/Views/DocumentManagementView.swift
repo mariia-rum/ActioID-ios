@@ -5,8 +5,14 @@ struct DocumentManagementView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.documents) { document in
-                Text(document.type)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ForEach(viewModel.documents) { document in
+                        DocumentCardView(document: document)
+                            .frame(width: UIScreen.main.bounds.width - 40)
+                    }
+                }
+                .padding()
             }
             .navigationTitle("Documents")
             .toolbar {

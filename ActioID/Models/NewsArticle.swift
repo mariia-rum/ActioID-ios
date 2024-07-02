@@ -31,7 +31,7 @@ struct NewsArticles: Identifiable, Codable {
         title = try container.decode(String.self, forKey: .title)
         link = try container.decode(String.self, forKey: .link)
         if let timestamp = try container.decodeIfPresent(Timestamp.self, forKey: .pubDate) {
-            pubDate = timestamp.dateValue().toString(format: "MMM dd, yyyy HH:mm:ss")
+            pubDate = timestamp.toFormattedString(format: "dd MMMM yyyy")
         } else {
             pubDate = try container.decode(String.self, forKey: .pubDate)
         }

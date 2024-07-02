@@ -41,6 +41,7 @@
 		1897F5F12C283CB100D851E6 /* OfflineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5F02C283CB100D851E6 /* OfflineService.swift */; };
 		1897F5F32C283CC100D851E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5F22C283CC100D851E6 /* Extensions.swift */; };
 		1897F5F52C285E8F00D851E6 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5F42C285E8F00D851E6 /* UserProfile.swift */; };
+		18E05DA62C32F80900352D13 /* DocumentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E05DA52C32F80900352D13 /* DocumentCardView.swift */; };
 		3B51A21C7FAD616F6B6F5BAE /* Pods_ActioIDUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A0C148E3485446928DD649 /* Pods_ActioIDUITests.framework */; };
 		5D49DE7132D6777CF5A672BC /* Pods_ActioID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1A0BA6E10144A2CFA8A660 /* Pods_ActioID.framework */; };
 		F638E03943ACF9FCCD293887 /* Pods_ActioIDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B2C9994B56BE202230646E /* Pods_ActioIDTests.framework */; };
@@ -102,6 +103,7 @@
 		1897F5F02C283CB100D851E6 /* OfflineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineService.swift; sourceTree = "<group>"; };
 		1897F5F22C283CC100D851E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1897F5F42C285E8F00D851E6 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		18E05DA52C32F80900352D13 /* DocumentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCardView.swift; sourceTree = "<group>"; };
 		31A4960D77F6DED90CB4787E /* Pods-ActioID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioID.release.xcconfig"; path = "Target Support Files/Pods-ActioID/Pods-ActioID.release.xcconfig"; sourceTree = "<group>"; };
 		7C1A0BA6E10144A2CFA8A660 /* Pods_ActioID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActioID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B2C9994B56BE202230646E /* Pods_ActioIDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActioIDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +255,7 @@
 				1897F5CC2C283BC100D851E6 /* NewsFeedView.swift */,
 				1897F5CE2C283BCC00D851E6 /* ArticleDetailsView.swift */,
 				1897F5D02C283BD700D851E6 /* DocumentManagementView.swift */,
+				18E05DA52C32F80900352D13 /* DocumentCardView.swift */,
 				1897F5D22C283BE200D851E6 /* GovernmentServicesView.swift */,
 				1897F5D42C283BED00D851E6 /* ServiceRequestView.swift */,
 				1897F5D62C283BF700D851E6 /* AccountManagementView.swift */,
@@ -499,6 +502,7 @@
 				1897F5E92C283C7D00D851E6 /* NewsService.swift in Sources */,
 				1897F5D52C283BED00D851E6 /* ServiceRequestView.swift in Sources */,
 				1897F5912C2714CD00D851E6 /* ContentView.swift in Sources */,
+				18E05DA62C32F80900352D13 /* DocumentCardView.swift in Sources */,
 				1897F5E12C283C4400D851E6 /* DocumentManagementViewModel.swift in Sources */,
 				1897F5CB2C283BB600D851E6 /* RegistrationView.swift in Sources */,
 				1897F5CD2C283BC100D851E6 /* NewsFeedView.swift in Sources */,

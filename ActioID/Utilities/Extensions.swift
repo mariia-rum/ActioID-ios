@@ -1,17 +1,11 @@
 import Foundation
+import FirebaseFirestore
 
-extension Date {
-    func toString(format: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: self)
-    }
-}
-
-extension String {
-    func toDate(format: String) -> Date? {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.date(from: self)
+extension Timestamp {
+    func toFormattedString(format: String = "dd MMMM yyyy") -> String {
+        let date = self.dateValue()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: date)
     }
 }
