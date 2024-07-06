@@ -1,22 +1,14 @@
 import Foundation
-import Combine
 
 class DocumentManagementViewModel: ObservableObject {
     @Published var documents: [Document] = []
-    private var cancellables = Set<AnyCancellable>()
-
+    
     func fetchDocuments() {
-        DocumentService.shared.fetchDocuments { [weak self] documents in
+        // Assuming userId is available in your app
+        let userId = "test1"
+        DocumentService.shared.fetchDocuments(for: userId) { documents in
             DispatchQueue.main.async {
-                self?.documents = documents
-            }
-        }
-    }
-
-    func uploadDocument(document: Document) {
-        DocumentService.shared.uploadDocument(document: document) { success in
-            if success {
-                self.fetchDocuments()
+                self.documents = documents
             }
         }
     }

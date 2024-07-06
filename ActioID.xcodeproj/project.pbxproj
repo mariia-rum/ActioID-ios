@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1832BCEC2C3919A1002A14E8 /* Pods_ActioIDUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586496FD8E3BF97B6DE5DAD3 /* Pods_ActioIDUITests.framework */; };
+		1832BCED2C3919A1002A14E8 /* Pods_ActioIDUITests.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 586496FD8E3BF97B6DE5DAD3 /* Pods_ActioIDUITests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1832BCEF2C3919A5002A14E8 /* Pods_ActioIDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F9CC081E617B0D6280D58F /* Pods_ActioIDTests.framework */; };
+		1832BCF02C3919A5002A14E8 /* Pods_ActioIDTests.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 21F9CC081E617B0D6280D58F /* Pods_ActioIDTests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1832BCF22C3919AB002A14E8 /* Pods_ActioID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FC78FC5A536FA8C1B09CE3 /* Pods_ActioID.framework */; };
+		1832BCF32C3919AB002A14E8 /* Pods_ActioID.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1FC78FC5A536FA8C1B09CE3 /* Pods_ActioID.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		184A6C7D2C2EFFE100140DCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 184A6C7C2C2EFFE100140DCD /* GoogleService-Info.plist */; };
 		18594E042C29AC52003DD43A /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18594E032C29AC52003DD43A /* FirestoreService.swift */; };
 		18594E062C29AEFC003DD43A /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18594E052C29AEFC003DD43A /* NewsArticle.swift */; };
@@ -42,9 +48,6 @@
 		1897F5F32C283CC100D851E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5F22C283CC100D851E6 /* Extensions.swift */; };
 		1897F5F52C285E8F00D851E6 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5F42C285E8F00D851E6 /* UserProfile.swift */; };
 		18E05DA62C32F80900352D13 /* DocumentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E05DA52C32F80900352D13 /* DocumentCardView.swift */; };
-		3B51A21C7FAD616F6B6F5BAE /* Pods_ActioIDUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A0C148E3485446928DD649 /* Pods_ActioIDUITests.framework */; };
-		5D49DE7132D6777CF5A672BC /* Pods_ActioID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1A0BA6E10144A2CFA8A660 /* Pods_ActioID.framework */; };
-		F638E03943ACF9FCCD293887 /* Pods_ActioIDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B2C9994B56BE202230646E /* Pods_ActioIDTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +67,44 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1816D9222C37C34400D621E6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1832BCF32C3919AB002A14E8 /* Pods_ActioID.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1832BCEE2C3919A1002A14E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1832BCED2C3919A1002A14E8 /* Pods_ActioIDUITests.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1832BCF12C3919A5002A14E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1832BCF02C3919A5002A14E8 /* Pods_ActioIDTests.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		04A0C148E3485446928DD649 /* Pods_ActioIDUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActioIDUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EB63570C7849B17B23398F6 /* Pods-ActioIDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDTests.release.xcconfig"; path = "Target Support Files/Pods-ActioIDTests/Pods-ActioIDTests.release.xcconfig"; sourceTree = "<group>"; };
 		184A6C7C2C2EFFE100140DCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		18594E002C298BC5003DD43A /* ActioID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActioID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18594E012C298BC5003DD43A /* ActioIDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActioIDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,15 +142,17 @@
 		1897F5F02C283CB100D851E6 /* OfflineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineService.swift; sourceTree = "<group>"; };
 		1897F5F22C283CC100D851E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1897F5F42C285E8F00D851E6 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		18D68EBC2C396CCA002970DC /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D68EBE2C396CEB002970DC /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E05DA52C32F80900352D13 /* DocumentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCardView.swift; sourceTree = "<group>"; };
-		31A4960D77F6DED90CB4787E /* Pods-ActioID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioID.release.xcconfig"; path = "Target Support Files/Pods-ActioID/Pods-ActioID.release.xcconfig"; sourceTree = "<group>"; };
-		7C1A0BA6E10144A2CFA8A660 /* Pods_ActioID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActioID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		94B2C9994B56BE202230646E /* Pods_ActioIDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActioIDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A644EEDF85B6ECED0F21E4F6 /* Pods-ActioIDUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDUITests.release.xcconfig"; path = "Target Support Files/Pods-ActioIDUITests/Pods-ActioIDUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A868FAD9B4579C8F68445810 /* Pods-ActioIDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDUITests.debug.xcconfig"; path = "Target Support Files/Pods-ActioIDUITests/Pods-ActioIDUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		BB82EFEC8149815F1866B68E /* Pods-ActioID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioID.debug.xcconfig"; path = "Target Support Files/Pods-ActioID/Pods-ActioID.debug.xcconfig"; sourceTree = "<group>"; };
-		E6C0592DF91629E5D8A9F684 /* Pods-ActioIDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDTests.debug.xcconfig"; path = "Target Support Files/Pods-ActioIDTests/Pods-ActioIDTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EDA8C49F721B253870C03D23 /* Pods-ActioIDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDTests.release.xcconfig"; path = "Target Support Files/Pods-ActioIDTests/Pods-ActioIDTests.release.xcconfig"; sourceTree = "<group>"; };
+		21F9CC081E617B0D6280D58F /* Pods_ActioIDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActioIDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F72AF37E52AD1FFF3B3CFED /* Pods-ActioID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioID.release.xcconfig"; path = "Target Support Files/Pods-ActioID/Pods-ActioID.release.xcconfig"; sourceTree = "<group>"; };
+		421C138C9CAEBB964CD1D747 /* Pods-ActioIDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDUITests.debug.xcconfig"; path = "Target Support Files/Pods-ActioIDUITests/Pods-ActioIDUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		586496FD8E3BF97B6DE5DAD3 /* Pods_ActioIDUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActioIDUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E467833E6BF8886E779B8A7 /* Pods-ActioIDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDTests.debug.xcconfig"; path = "Target Support Files/Pods-ActioIDTests/Pods-ActioIDTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A83F7C0932AD0AC1318B7B03 /* Pods-ActioIDUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDUITests.release.xcconfig"; path = "Target Support Files/Pods-ActioIDUITests/Pods-ActioIDUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AA51D73A857A3974F072BE4B /* Pods-ActioID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioID.debug.xcconfig"; path = "Target Support Files/Pods-ActioID/Pods-ActioID.debug.xcconfig"; sourceTree = "<group>"; };
+		E1FC78FC5A536FA8C1B09CE3 /* Pods_ActioID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActioID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D49DE7132D6777CF5A672BC /* Pods_ActioID.framework in Frameworks */,
+				1832BCF22C3919AB002A14E8 /* Pods_ActioID.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F638E03943ACF9FCCD293887 /* Pods_ActioIDTests.framework in Frameworks */,
+				1832BCEF2C3919A5002A14E8 /* Pods_ActioIDTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B51A21C7FAD616F6B6F5BAE /* Pods_ActioIDUITests.framework in Frameworks */,
+				1832BCEC2C3919A1002A14E8 /* Pods_ActioIDUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,12 +186,12 @@
 		0CBC1D645A267473A3802F81 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BB82EFEC8149815F1866B68E /* Pods-ActioID.debug.xcconfig */,
-				31A4960D77F6DED90CB4787E /* Pods-ActioID.release.xcconfig */,
-				E6C0592DF91629E5D8A9F684 /* Pods-ActioIDTests.debug.xcconfig */,
-				EDA8C49F721B253870C03D23 /* Pods-ActioIDTests.release.xcconfig */,
-				A868FAD9B4579C8F68445810 /* Pods-ActioIDUITests.debug.xcconfig */,
-				A644EEDF85B6ECED0F21E4F6 /* Pods-ActioIDUITests.release.xcconfig */,
+				AA51D73A857A3974F072BE4B /* Pods-ActioID.debug.xcconfig */,
+				3F72AF37E52AD1FFF3B3CFED /* Pods-ActioID.release.xcconfig */,
+				6E467833E6BF8886E779B8A7 /* Pods-ActioIDTests.debug.xcconfig */,
+				0EB63570C7849B17B23398F6 /* Pods-ActioIDTests.release.xcconfig */,
+				421C138C9CAEBB964CD1D747 /* Pods-ActioIDUITests.debug.xcconfig */,
+				A83F7C0932AD0AC1318B7B03 /* Pods-ActioIDUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -165,7 +206,7 @@
 				18594E002C298BC5003DD43A /* ActioID.app */,
 				18594E012C298BC5003DD43A /* ActioIDTests.xctest */,
 				18594E022C298BC5003DD43A /* ActioIDUITests.xctest */,
-				DB26AB56C7E0CBE85BA52B9F /* Frameworks */,
+				E24927D63AA99B8EFABFC133 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,12 +306,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		DB26AB56C7E0CBE85BA52B9F /* Frameworks */ = {
+		E24927D63AA99B8EFABFC133 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7C1A0BA6E10144A2CFA8A660 /* Pods_ActioID.framework */,
-				94B2C9994B56BE202230646E /* Pods_ActioIDTests.framework */,
-				04A0C148E3485446928DD649 /* Pods_ActioIDUITests.framework */,
+				18D68EBE2C396CEB002970DC /* FirebaseFirestore.framework */,
+				18D68EBC2C396CCA002970DC /* FirebaseFirestore.framework */,
+				E1FC78FC5A536FA8C1B09CE3 /* Pods_ActioID.framework */,
+				21F9CC081E617B0D6280D58F /* Pods_ActioIDTests.framework */,
+				586496FD8E3BF97B6DE5DAD3 /* Pods_ActioIDUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -282,11 +325,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1897F5AF2C2714CF00D851E6 /* Build configuration list for PBXNativeTarget "ActioID" */;
 			buildPhases = (
-				C4AE6FF5AE93D327519393A1 /* [CP] Check Pods Manifest.lock */,
+				5150A470A1F55EBC9C0F81B8 /* [CP] Check Pods Manifest.lock */,
 				1897F5872C2714CD00D851E6 /* Sources */,
 				1897F5882C2714CD00D851E6 /* Frameworks */,
 				1897F5892C2714CD00D851E6 /* Resources */,
-				83EE1CB196A286C58EB4F35A /* [CP] Embed Pods Frameworks */,
+				1816D9222C37C34400D621E6 /* Embed Frameworks */,
+				86C7FA4799FE2DCD39D39D14 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,10 +345,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1897F5B22C2714CF00D851E6 /* Build configuration list for PBXNativeTarget "ActioIDTests" */;
 			buildPhases = (
-				9EBBAA7011FFB1BE16BEFBD8 /* [CP] Check Pods Manifest.lock */,
+				6824AD327CAF855CF63774C3 /* [CP] Check Pods Manifest.lock */,
 				1897F5972C2714CE00D851E6 /* Sources */,
 				1897F5982C2714CE00D851E6 /* Frameworks */,
 				1897F5992C2714CE00D851E6 /* Resources */,
+				1D484A97B4BB19493C8BA6F4 /* [CP] Embed Pods Frameworks */,
+				1832BCF12C3919A5002A14E8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,10 +366,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1897F5B52C2714CF00D851E6 /* Build configuration list for PBXNativeTarget "ActioIDUITests" */;
 			buildPhases = (
-				BC2C5BEC7A39F14BE0CE8429 /* [CP] Check Pods Manifest.lock */,
+				869143FBCF487F8DC8EEFE34 /* [CP] Check Pods Manifest.lock */,
 				1897F5A12C2714CE00D851E6 /* Sources */,
 				1897F5A22C2714CE00D851E6 /* Frameworks */,
 				1897F5A32C2714CE00D851E6 /* Resources */,
+				1832BCEE2C3919A1002A14E8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,24 +452,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		83EE1CB196A286C58EB4F35A /* [CP] Embed Pods Frameworks */ = {
+		1D484A97B4BB19493C8BA6F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ActioID/Pods-ActioID-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ActioIDTests/Pods-ActioIDTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ActioID/Pods-ActioID-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ActioIDTests/Pods-ActioIDTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActioID/Pods-ActioID-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActioIDTests/Pods-ActioIDTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9EBBAA7011FFB1BE16BEFBD8 /* [CP] Check Pods Manifest.lock */ = {
+		5150A470A1F55EBC9C0F81B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ActioID-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6824AD327CAF855CF63774C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,7 +513,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BC2C5BEC7A39F14BE0CE8429 /* [CP] Check Pods Manifest.lock */ = {
+		869143FBCF487F8DC8EEFE34 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -466,26 +535,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C4AE6FF5AE93D327519393A1 /* [CP] Check Pods Manifest.lock */ = {
+		86C7FA4799FE2DCD39D39D14 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ActioID/Pods-ActioID-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ActioID-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-ActioID/Pods-ActioID-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActioID/Pods-ActioID-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -564,7 +628,7 @@
 		1897F5AD2C2714CE00D851E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -627,7 +691,7 @@
 		1897F5AE2C2714CE00D851E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -682,7 +746,7 @@
 		};
 		1897F5B02C2714CF00D851E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB82EFEC8149815F1866B68E /* Pods-ActioID.debug.xcconfig */;
+			baseConfigurationReference = AA51D73A857A3974F072BE4B /* Pods-ActioID.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -719,7 +783,7 @@
 		};
 		1897F5B12C2714CF00D851E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31A4960D77F6DED90CB4787E /* Pods-ActioID.release.xcconfig */;
+			baseConfigurationReference = 3F72AF37E52AD1FFF3B3CFED /* Pods-ActioID.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -756,14 +820,14 @@
 		};
 		1897F5B32C2714CF00D851E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6C0592DF91629E5D8A9F684 /* Pods-ActioIDTests.debug.xcconfig */;
+			baseConfigurationReference = 6E467833E6BF8886E779B8A7 /* Pods-ActioIDTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
@@ -778,14 +842,14 @@
 		};
 		1897F5B42C2714CF00D851E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDA8C49F721B253870C03D23 /* Pods-ActioIDTests.release.xcconfig */;
+			baseConfigurationReference = 0EB63570C7849B17B23398F6 /* Pods-ActioIDTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
@@ -800,12 +864,12 @@
 		};
 		1897F5B62C2714CF00D851E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A868FAD9B4579C8F68445810 /* Pods-ActioIDUITests.debug.xcconfig */;
+			baseConfigurationReference = 421C138C9CAEBB964CD1D747 /* Pods-ActioIDUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = berhtech.ActioIDUITests;
@@ -819,12 +883,12 @@
 		};
 		1897F5B72C2714CF00D851E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A644EEDF85B6ECED0F21E4F6 /* Pods-ActioIDUITests.release.xcconfig */;
+			baseConfigurationReference = A83F7C0932AD0AC1318B7B03 /* Pods-ActioIDUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = berhtech.ActioIDUITests;

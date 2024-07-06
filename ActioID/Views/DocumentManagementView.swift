@@ -8,8 +8,18 @@ struct DocumentManagementView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                     ForEach(viewModel.documents) { document in
-                        DocumentCardView(document: document)
-                            .frame(width: UIScreen.main.bounds.width - 40)
+                        if document.passport != nil {
+                            DocumentCardView(document: document)
+                                .frame(width: UIScreen.main.bounds.width - 40)
+                        }
+                        if document.drivingLicence != nil {
+                            DocumentCardView(document: document)
+                                .frame(width: UIScreen.main.bounds.width - 40)
+                        }
+                        if document.identificationNumber != nil {
+                            DocumentCardView(document: document)
+                                .frame(width: UIScreen.main.bounds.width - 40)
+                        }
                     }
                 }
                 .padding()

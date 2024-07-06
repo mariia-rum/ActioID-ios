@@ -1,9 +1,9 @@
-platform :ios, '12.0'
+platform :ios, '17.2'
 use_frameworks!
 
-# Pods for ActioID
 target 'ActioID' do
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'FirebaseFirestoreSwift'
@@ -14,19 +14,22 @@ target 'ActioID' do
 end
 
 target 'ActioIDTests' do
-  inherit! :search_paths # Pods for testing
+  inherit! :search_paths
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'FirebaseFirestoreSwift'
 end
 
 target 'ActioIDUITests' do
-  # Pods for testing
+  inherit! :search_paths
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      
-config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 
-'NO'
+      config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'NO'
     end
   end
 end
