@@ -23,40 +23,44 @@ class DocumentService {
                     if let documentId = doc.id {
                         print("Document ID: \(documentId)")
 
-                        // Fetch passport subcollection
                         dispatchGroup.enter()
                         self.fetchSubcollectionDocument(for: documentId, collection: "passport", type: Passport.self) { passport in
                             if let passport = passport {
                                 doc.passport = passport
+                                print("Assigned passport data for document ID \(documentId): \(passport)")
                             } else {
                                 print("No passport data found for document ID \(documentId)")
                             }
                             dispatchGroup.leave()
                         }
 
-                        // Fetch drivingLicence subcollection
                         dispatchGroup.enter()
                         self.fetchSubcollectionDocument(for: documentId, collection: "drivingLicence", type: DrivingLicence.self) { drivingLicence in
                             if let drivingLicence = drivingLicence {
                                 doc.drivingLicence = drivingLicence
+                                print("Assigned drivingLicence data for document ID \(documentId): \(drivingLicence)")
                             } else {
                                 print("No drivingLicence data found for document ID \(documentId)")
                             }
                             dispatchGroup.leave()
                         }
 
-                        // Fetch identificationNumber subcollection
                         dispatchGroup.enter()
                         self.fetchSubcollectionDocument(for: documentId, collection: "identificationNumber", type: IdentificationNumber.self) { identificationNumber in
                             if let identificationNumber = identificationNumber {
                                 doc.identificationNumber = identificationNumber
+                                print("Assigned identificationNumber data for document ID \(documentId): \(identificationNumber)")
                             } else {
                                 print("No identificationNumber data found for document ID \(documentId)")
                             }
                             dispatchGroup.leave()
                         }
+                        
+                        dispatchGroup.notify(queue: .main) {
+                            result.append(doc)
+                            print("Updated document: \(doc)")
+                        }
                     }
-                    result.append(doc)
                 } catch {
                     print("Error decoding document: \(error)")
                 }
@@ -64,6 +68,7 @@ class DocumentService {
 
             dispatchGroup.notify(queue: .main) {
                 print("Completed fetching subcollections")
+                print("Documents: \(result)")
                 completion(result)
             }
         }

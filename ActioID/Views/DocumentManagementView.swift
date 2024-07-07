@@ -8,15 +8,15 @@ struct DocumentManagementView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                     ForEach(viewModel.documents) { document in
-                        if let _ = document.passport {
+                        if let passport = document.passport {
                             DocumentCardView(document: document, subcollection: "passport")
                                 .frame(width: UIScreen.main.bounds.width - 40)
                         }
-                        if let _ = document.drivingLicence {
+                        if let drivingLicence = document.drivingLicence {
                             DocumentCardView(document: document, subcollection: "drivingLicence")
                                 .frame(width: UIScreen.main.bounds.width - 40)
                         }
-                        if let _ = document.identificationNumber {
+                        if let identificationNumber = document.identificationNumber {
                             DocumentCardView(document: document, subcollection: "identificationNumber")
                                 .frame(width: UIScreen.main.bounds.width - 40)
                         }
@@ -25,15 +25,6 @@ struct DocumentManagementView: View {
                 .padding()
             }
             .navigationTitle("Documents")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        // Handle document upload
-                    }) {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
             .onAppear {
                 viewModel.fetchDocuments()
             }

@@ -105,13 +105,17 @@ struct DocumentCardView: View {
     }
 
     private func fetchImageURL() {
-        guard let photoUrl = document.photoUrl else { return }
+        guard let photoUrl = document.photoUrl else {
+            print("Photo URL is nil")
+            return
+        }
         let storageRef = Storage.storage().reference(forURL: photoUrl)
         storageRef.downloadURL { url, error in
             if let error = error {
                 print("Error fetching image URL: \(error.localizedDescription)")
                 return
             }
+            print("Fetched image URL: \(url?.absoluteString ?? "No URL")")
             self.imageURL = url
         }
     }
@@ -124,6 +128,7 @@ struct DocumentCardView: View {
                 print("Error fetching QR code URL: \(error.localizedDescription)")
                 return
             }
+            print("Fetched QR code URL: \(url?.absoluteString ?? "No URL")")
             self.qrCodeURL = url
         }
     }
