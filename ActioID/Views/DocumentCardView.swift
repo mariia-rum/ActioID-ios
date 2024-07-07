@@ -1,9 +1,10 @@
 import SwiftUI
-import FirebaseStorage
 import FirebaseFirestore
+import FirebaseStorage
 
 struct DocumentCardView: View {
     let document: Document
+    let subcollection: String
     @State private var showQRCode = false
     @State private var imageURL: URL?
     @State private var qrCodeURL: URL?
@@ -12,7 +13,7 @@ struct DocumentCardView: View {
         VStack {
             if showQRCode {
                 VStack {
-                    Text(documentType)
+                    Text(cardTitle)
                         .font(.headline)
                         .padding()
                     if let qrCodeURL = qrCodeURL {
@@ -22,8 +23,6 @@ struct DocumentCardView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 300, height: 300)
                                 .padding(15)
-                                .padding(.top, 5)
-                                .padding(.bottom, 15)
                         } placeholder: {
                             ProgressView()
                         }
@@ -36,46 +35,49 @@ struct DocumentCardView: View {
                 }
             } else {
                 VStack(alignment: .center, spacing: 10) {
-                    Text(documentType)
+                    Text(cardTitle)
                         .font(.headline)
-                    if let imageURL = imageURL, documentType != "Identification Number" {
-                        AsyncImage(url: imageURL) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 300, height: 330)
-                                .cornerRadius(8)
-                                .shadow(radius: 5)
-                        } placeholder: {
+                    if subcollection == "passport" || subcollection == "drivingLicence" {
+                        if let imageURL = imageURL {
+                            AsyncImage(url: imageURL) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 300, height: 330)
+                                    .cornerRadius(8)
+                                    .shadow(radius: 5)
+                            } placeholder: {
+                                ProgressView()
+                            }
+                        } else {
                             ProgressView()
+                                .frame(height: 150)
+                                .cornerRadius(8)
+                                .onAppear {
+                                    fetchImageURL()
+                                }
                         }
                     }
                     Text("First Name: \(document.firstName)")
                     Text("Last Name: \(document.lastName)")
-                    if documentType == "National Passport" {
-                        if let passport = document.passport {
-                            Text("Passport Number: \(passport["passportNumber"] as? String ?? "")")
-                            Text("Issued On: \(formatDate(timestamp: passport["issuedOn"] as? Timestamp))")
-                            Text("Expires On: \(formatDate(timestamp: passport["expiresOn"] as? Timestamp))")
+                    if subcollection == "passport", let passport = document.passport {
+                        Text("Passport Number: \(passport.passportNumber)")
+                        Text("Issued On: \(passport.issuedOn.toFormattedString())")
+                        Text("Expires On: \(passport.expiresOn.toFormattedString())")
+                        if let dateOfBirth = document.dateOfBirth {
+                            Text("Date of Birth: \(dateOfBirth.toFormattedString())")
                         }
-                    } else if documentType == "Driving Licence" {
-                        if let drivingLicence = document.drivingLicence {
-                            Text("Driving Licence Number: \(drivingLicence["drivingLicenceNumber"] as? String ?? "")")
-                            Text("Issued On: \(formatDate(timestamp: drivingLicence["issuedOn"] as? Timestamp))")
-                            Text("Expires On: \(formatDate(timestamp: drivingLicence["expiresOn"] as? Timestamp))")
-                        }
-                    } else if documentType == "Identification Number" {
-                        if let identificationNumber = document.identificationNumber {
-                            Text("Identification Number: \(identificationNumber["identificationNumber"] as? String ?? "")")
-                        }
+                    }
+                    if subcollection == "drivingLicence", let drivingLicence = document.drivingLicence {
+                        Text("Driving Licence Number: \(drivingLicence.drivingLicenceNumber)")
+                        Text("Issued On: \(drivingLicence.issuedOn.toFormattedString())")
+                        Text("Expires On: \(drivingLicence.expiresOn.toFormattedString())")
+                    }
+                    if subcollection == "identificationNumber", let identificationNumber = document.identificationNumber {
+                        Text("Identification Number: \(identificationNumber.identificationNumber)")
                     }
                 }
                 .padding()
-                .onAppear {
-                    if documentType != "Identification Number" {
-                        fetchImageURL()
-                    }
-                }
             }
         }
         .background(Color.white)
@@ -89,20 +91,17 @@ struct DocumentCardView: View {
         }
     }
 
-    private var documentType: String {
-        if document.passport != nil {
+    private var cardTitle: String {
+        switch subcollection {
+        case "passport":
             return "National Passport"
-        } else if document.drivingLicence != nil {
+        case "drivingLicence":
             return "Driving Licence"
-        } else if document.identificationNumber != nil {
+        case "identificationNumber":
             return "Identification Number"
+        default:
+            return ""
         }
-        return "Unknown Document"
-    }
-
-    private func formatDate(timestamp: Timestamp?) -> String {
-        guard let timestamp = timestamp else { return "N/A" }
-        return timestamp.toFormattedString()
     }
 
     private func fetchImageURL() {
@@ -114,7 +113,6 @@ struct DocumentCardView: View {
                 return
             }
             self.imageURL = url
-            print("Fetched image URL: \(url?.absoluteString ?? "No URL")")
         }
     }
 
@@ -127,13 +125,6 @@ struct DocumentCardView: View {
                 return
             }
             self.qrCodeURL = url
-            print("Fetched QR code URL: \(url?.absoluteString ?? "No URL")")
         }
-    }
-}
-
-struct DocumentCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        DocumentCardView(document: Document(id: UUID().uuidString, userId: "test1", firstName: "Erika", lastName: "Mustermann", dateOfBirth: nil, photoUrl: "gs://actioid-631ea.appspot.com/photosUsers/erika-mustermann.png", passport: ["passportNumber": "123456789", "issuedOn": Timestamp(date: Date()), "expiresOn": Timestamp(date: Date())], drivingLicence: ["drivingLicenceNumber": "987654321", "issuedOn": Timestamp(date: Date()), "expiresOn": Timestamp(date: Date())], identificationNumber: ["identificationNumber": "A1234567"]))
     }
 }

@@ -8,16 +8,16 @@ struct DocumentManagementView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                     ForEach(viewModel.documents) { document in
-                        if document.passport != nil {
-                            DocumentCardView(document: document)
+                        if let _ = document.passport {
+                            DocumentCardView(document: document, subcollection: "passport")
                                 .frame(width: UIScreen.main.bounds.width - 40)
                         }
-                        if document.drivingLicence != nil {
-                            DocumentCardView(document: document)
+                        if let _ = document.drivingLicence {
+                            DocumentCardView(document: document, subcollection: "drivingLicence")
                                 .frame(width: UIScreen.main.bounds.width - 40)
                         }
-                        if document.identificationNumber != nil {
-                            DocumentCardView(document: document)
+                        if let _ = document.identificationNumber {
+                            DocumentCardView(document: document, subcollection: "identificationNumber")
                                 .frame(width: UIScreen.main.bounds.width - 40)
                         }
                     }
