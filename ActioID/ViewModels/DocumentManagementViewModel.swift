@@ -11,10 +11,7 @@ class DocumentManagementViewModel: ObservableObject {
         documentService.fetchDocuments(for: userId) { [weak self] documents in
             DispatchQueue.main.async {
                 self?.documents = documents
-                print("Fetched documents: \(documents)")
-                for doc in documents {
-                    print("Document: \(doc)")
-                }
+               
             }
         }
     }

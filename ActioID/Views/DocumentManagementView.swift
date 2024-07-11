@@ -1,30 +1,57 @@
 import SwiftUI
 
+struct PageControl: View {
+    var numberOfPages: Int
+    @Binding var currentPage: Int
+
+    var body: some View {
+        HStack(spacing: 25) {
+            ForEach(0..<numberOfPages, id: \.self) { index in
+                Circle()
+                    .fill(index == currentPage ? Color.black : Color.gray)
+                    .frame(width: 10, height: 10)
+            }
+        }
+    }
+}
+
 struct DocumentManagementView: View {
     @StateObject private var viewModel = DocumentManagementViewModel()
+    @State private var currentIndex: Int = 0
 
     var body: some View {
         NavigationView {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
-                    ForEach(viewModel.documents) { document in
-                        if let passport = document.passport {
-                            DocumentCardView(document: document, subcollection: "passport")
-                                .frame(width: UIScreen.main.bounds.width - 40)
-                        }
-                        if let drivingLicence = document.drivingLicence {
-                            DocumentCardView(document: document, subcollection: "drivingLicence")
-                                .frame(width: UIScreen.main.bounds.width - 40)
-                        }
-                        if let identificationNumber = document.identificationNumber {
-                            DocumentCardView(document: document, subcollection: "identificationNumber")
-                                .frame(width: UIScreen.main.bounds.width - 40)
-                        }
+            VStack {
+                Text("Documents")
+                    .font(.largeTitle)
+                    .bold()
+                
+                TabView(selection: $currentIndex) {
+                    ForEach(viewModel.documents.indices, id: \.self) { index in
+                        DocumentCardView(document: viewModel.documents[index], subcollection: "passport")
+                            .frame(width: 350, height: 520)
+                            .tag(index)
+                        DocumentCardView(document: viewModel.documents[index], subcollection: "drivingLicence")
+                            .frame(width: 350, height: 520)
+                            .tag(index + viewModel.documents.count)
+                        DocumentCardView(document: viewModel.documents[index], subcollection: "identificationNumber")
+                            .frame(width: 350, height: 520)
+                            .tag(index + 2 * viewModel.documents.count)
                     }
                 }
-                .padding()
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .frame(height: 550)
+                .onChange(of: currentIndex) { oldValue, newValue in
+                    withAnimation {
+                        currentIndex = newValue
+                    }
+                }
+                
+                PageControl(numberOfPages: viewModel.documents.count * 3, currentPage: $currentIndex) 
+                    .padding(.bottom, 20)
             }
-            .navigationTitle("Documents")
+            .navigationTitle("")
+            .navigationBarHidden(true)
             .onAppear {
                 viewModel.fetchDocuments()
             }
