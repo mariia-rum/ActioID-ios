@@ -5,7 +5,7 @@ class GovernmentServicesViewModel: ObservableObject {
     @Published var services: [Service] = []
 
     func fetchServiceRequests() {
-        // Simulate API call to fetch services
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.services = [
                 Service(name: "RESIDENCE REGISTRATION", description: "This Section Of ActioID Helps You Manage Your Residence Registration In Germany. We'll Guide You Through The Process, Securely Transmit Your Information To The Bürgeramt, And Keep You Updated On The Status.", isExpanded: false, subServices: [
@@ -31,9 +31,4 @@ struct Service: Identifiable {
 struct SubService: Identifiable {
     let id = UUID()
     let name: String
-}
-
-struct ServiceRequest: Identifiable {
-    let id = UUID()
-    let type: String
 }

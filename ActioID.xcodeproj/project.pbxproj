@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1800F6882C413C7500842F65 /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800F6872C413C7500842F65 /* ServiceDetailView.swift */; };
-		1800F68A2C4145EA00842F65 /* SubServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800F6892C4145EA00842F65 /* SubServiceDetailView.swift */; };
+		1800F68C2C42DC6400842F65 /* SubServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800F68B2C42DC6400842F65 /* SubServiceDetailView.swift */; };
 		1832BCEC2C3919A1002A14E8 /* Pods_ActioIDUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586496FD8E3BF97B6DE5DAD3 /* Pods_ActioIDUITests.framework */; };
 		1832BCED2C3919A1002A14E8 /* Pods_ActioIDUITests.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 586496FD8E3BF97B6DE5DAD3 /* Pods_ActioIDUITests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1832BCEF2C3919A5002A14E8 /* Pods_ActioIDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F9CC081E617B0D6280D58F /* Pods_ActioIDTests.framework */; };
@@ -42,7 +41,6 @@
 		1897F5E72C283C6600D851E6 /* OfflineAccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5E62C283C6600D851E6 /* OfflineAccessViewModel.swift */; };
 		1897F5E92C283C7D00D851E6 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5E82C283C7D00D851E6 /* NewsService.swift */; };
 		1897F5EB2C283C8800D851E6 /* DocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5EA2C283C8800D851E6 /* DocumentService.swift */; };
-		1897F5ED2C283C9400D851E6 /* GovernmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5EC2C283C9400D851E6 /* GovernmentService.swift */; };
 		1897F5EF2C283CA600D851E6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5EE2C283CA600D851E6 /* AuthService.swift */; };
 		1897F5F12C283CB100D851E6 /* OfflineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5F02C283CB100D851E6 /* OfflineService.swift */; };
 		1897F5F32C283CC100D851E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5F22C283CC100D851E6 /* Extensions.swift */; };
@@ -105,8 +103,7 @@
 
 /* Begin PBXFileReference section */
 		0EB63570C7849B17B23398F6 /* Pods-ActioIDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActioIDTests.release.xcconfig"; path = "Target Support Files/Pods-ActioIDTests/Pods-ActioIDTests.release.xcconfig"; sourceTree = "<group>"; };
-		1800F6872C413C7500842F65 /* ServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
-		1800F6892C4145EA00842F65 /* SubServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubServiceDetailView.swift; sourceTree = "<group>"; };
+		1800F68B2C42DC6400842F65 /* SubServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubServiceDetailView.swift; sourceTree = "<group>"; };
 		184A6C7C2C2EFFE100140DCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		18594E002C298BC5003DD43A /* ActioID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActioID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18594E012C298BC5003DD43A /* ActioIDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActioIDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +134,6 @@
 		1897F5E62C283C6600D851E6 /* OfflineAccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineAccessViewModel.swift; sourceTree = "<group>"; };
 		1897F5E82C283C7D00D851E6 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		1897F5EA2C283C8800D851E6 /* DocumentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentService.swift; sourceTree = "<group>"; };
-		1897F5EC2C283C9400D851E6 /* GovernmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovernmentService.swift; sourceTree = "<group>"; };
 		1897F5EE2C283CA600D851E6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1897F5F02C283CB100D851E6 /* OfflineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineService.swift; sourceTree = "<group>"; };
 		1897F5F22C283CC100D851E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -248,7 +244,6 @@
 			children = (
 				1897F5E82C283C7D00D851E6 /* NewsService.swift */,
 				1897F5EA2C283C8800D851E6 /* DocumentService.swift */,
-				1897F5EC2C283C9400D851E6 /* GovernmentService.swift */,
 				1897F5EE2C283CA600D851E6 /* AuthService.swift */,
 				1897F5F02C283CB100D851E6 /* OfflineService.swift */,
 				18594E032C29AC52003DD43A /* FirestoreService.swift */,
@@ -300,8 +295,7 @@
 				1897F5D62C283BF700D851E6 /* AccountManagementView.swift */,
 				1897F5D82C283C0400D851E6 /* OfflineAccessView.swift */,
 				1897F5DA2C283C1000D851E6 /* MainTabView.swift */,
-				1800F6872C413C7500842F65 /* ServiceDetailView.swift */,
-				1800F6892C4145EA00842F65 /* SubServiceDetailView.swift */,
+				1800F68B2C42DC6400842F65 /* SubServiceDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -561,16 +555,15 @@
 			files = (
 				1897F5CF2C283BCC00D851E6 /* ArticleDetailsView.swift in Sources */,
 				1897F5EB2C283C8800D851E6 /* DocumentService.swift in Sources */,
+				1800F68C2C42DC6400842F65 /* SubServiceDetailView.swift in Sources */,
 				1897F5C72C283B8A00D851E6 /* Document.swift in Sources */,
 				1897F5E92C283C7D00D851E6 /* NewsService.swift in Sources */,
 				1897F5912C2714CD00D851E6 /* ContentView.swift in Sources */,
 				18E05DA62C32F80900352D13 /* DocumentCardView.swift in Sources */,
-				1800F6882C413C7500842F65 /* ServiceDetailView.swift in Sources */,
 				1897F5E12C283C4400D851E6 /* DocumentManagementViewModel.swift in Sources */,
 				1897F5CB2C283BB600D851E6 /* RegistrationView.swift in Sources */,
 				1897F5CD2C283BC100D851E6 /* NewsFeedView.swift in Sources */,
 				1897F5E72C283C6600D851E6 /* OfflineAccessViewModel.swift in Sources */,
-				1800F68A2C4145EA00842F65 /* SubServiceDetailView.swift in Sources */,
 				1897F5D92C283C0400D851E6 /* OfflineAccessView.swift in Sources */,
 				1897F5D72C283BF700D851E6 /* AccountManagementView.swift in Sources */,
 				1897F58F2C2714CD00D851E6 /* ActioIDApp.swift in Sources */,
@@ -583,7 +576,6 @@
 				1897F5D12C283BD700D851E6 /* DocumentManagementView.swift in Sources */,
 				18594E042C29AC52003DD43A /* FirestoreService.swift in Sources */,
 				18594E062C29AEFC003DD43A /* NewsArticle.swift in Sources */,
-				1897F5ED2C283C9400D851E6 /* GovernmentService.swift in Sources */,
 				1897F5F32C283CC100D851E6 /* Extensions.swift in Sources */,
 				1897F5E32C283C5000D851E6 /* GovernmentServicesViewModel.swift in Sources */,
 				1897F5E52C283C5B00D851E6 /* AccountManagementViewModel.swift in Sources */,

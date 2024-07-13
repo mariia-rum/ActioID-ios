@@ -14,23 +14,25 @@ struct GovernmentServicesView: View {
 
                 List {
                     ForEach($viewModel.services.indices, id: \.self) { index in
-                        VStack(alignment: .leading, spacing: 0) {
+                        Section {
                             ServiceCard(service: $viewModel.services[index])
-                                .listRowBackground(Color.white)
-
-                            if viewModel.services[index].isExpanded {
-                                ServiceDetails(service: viewModel.services[index])
-                            }
+                        }
+                        if viewModel.services[index].isExpanded {
+                            ServiceDetails(service: viewModel.services[index])
                         }
                     }
+                    .listRowBackground(Color.white)
+                    .padding(.horizontal, 10)
                 }
                 .listStyle(PlainListStyle())
+                .background(Color.white)
             }
             .background(Color.white)
             .onAppear {
                 viewModel.fetchServiceRequests()
             }
         }
+        .background(Color.white)
     }
 }
 
@@ -54,7 +56,7 @@ struct ServiceCard: View {
         .background(Color(.systemGray6))
         .cornerRadius(10)
         .shadow(radius: 2)
-        .padding(.vertical, 2)
+        .padding(.vertical, 3)
     }
 }
 
@@ -62,24 +64,17 @@ struct ServiceDetails: View {
     let service: Service
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(service.description)
-                .padding()
-                .background(Color(.systemGray6))
-            ForEach(service.subServices) { subService in
-                NavigationLink(destination: SubServiceDetailView(subService: subService)) {
-                    SubServiceCard(subService: subService)
-                        .listRowBackground(Color.white)
-                }
-                .buttonStyle(PlainButtonStyle()) // Ensure no default button styling
+        ForEach(service.subServices) { subService in
+            NavigationLink(destination: SubServiceDetailView(subService: subService)) {
+                SubServiceCard(subService: subService)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(16)
+                    .shadow(radius: 2)
+                    .padding(.vertical, 3)
             }
+           
         }
-        .background(Color(.systemGray6))
-        .cornerRadius(10)
-        .shadow(radius: 2)
-        .padding(.vertical, 2)
-        .transition(.opacity.combined(with: .slide))
-        .animation(.easeInOut(duration: 0.3))
+        .padding(.horizontal)
     }
 }
 
@@ -92,14 +87,14 @@ struct SubServiceCard: View {
                 .font(.headline)
                 .foregroundColor(.primary)
             Spacer()
-            Image(systemName: "chevron.right")
                 .font(.headline)
                 .foregroundColor(.black)
         }
         .padding()
-        .background(Color(.systemGray5))
-        .cornerRadius(8)
-        .padding(.vertical, 2)
+        .background(Color(.systemGray6))
+        .cornerRadius(16)
+        .shadow(radius: 2)
+        .padding(.vertical, 3)
     }
 }
 
