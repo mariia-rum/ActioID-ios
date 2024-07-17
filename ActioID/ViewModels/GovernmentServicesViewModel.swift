@@ -1,6 +1,6 @@
-import Foundation
-import Combine
+import SwiftUI
 
+// ViewModel
 class GovernmentServicesViewModel: ObservableObject {
     @Published var services: [Service] = []
 
@@ -30,3 +30,4 @@ struct SubService: Identifiable, Hashable {
     let id = UUID()
     let name: String
 }
+

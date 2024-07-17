@@ -1,5 +1,6 @@
 import SwiftUI
 
+
 struct GovernmentServicesView: View {
     @StateObject private var viewModel = GovernmentServicesViewModel()
     @State private var path: [SubService] = []
@@ -15,23 +16,15 @@ struct GovernmentServicesView: View {
 
                 List {
                     ForEach($viewModel.services.indices, id: \.self) { index in
-                        VStack(alignment: .leading, spacing: 0) {
-                            ServiceCard(service: $viewModel.services[index])
-                                .listRowBackground(Color.white)
-                            if viewModel.services[index].isExpanded {
-                                ServiceDetails(service: $viewModel.services[index], path: $path)
-                                    .transition(.slide)
-                            }
+                        ServiceCard(service: $viewModel.services[index])
+                        if viewModel.services[index].isExpanded {
+                            ServiceDetails(service: $viewModel.services[index], path: $path)
                         }
-                        .animation(.easeInOut(duration: 0.3), value: viewModel.services[index].isExpanded)
                     }
-                    .listRowBackground(Color.white)
-                    .padding(.horizontal, 10)
                 }
                 .listStyle(PlainListStyle())
                 .background(Color.white)
             }
-            .background(Color.white)
             .onAppear {
                 viewModel.fetchServiceRequests()
             }
@@ -43,6 +36,7 @@ struct GovernmentServicesView: View {
     }
 }
 
+// ServiceCard
 struct ServiceCard: View {
     @Binding var service: Service
 
@@ -67,6 +61,7 @@ struct ServiceCard: View {
     }
 }
 
+// ServiceDetails
 struct ServiceDetails: View {
     @Binding var service: Service
     @Binding var path: [SubService]
@@ -91,6 +86,7 @@ struct ServiceDetails: View {
     }
 }
 
+// SubServiceCard
 struct SubServiceCard: View {
     let subService: SubService
 
@@ -111,6 +107,7 @@ struct SubServiceCard: View {
     }
 }
 
+// Previews
 struct GovernmentServicesView_Previews: PreviewProvider {
     static var previews: some View {
         GovernmentServicesView()
