@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 struct GovernmentServicesView: View {
     @StateObject private var viewModel = GovernmentServicesViewModel()
     @State private var path: [SubService] = []
@@ -15,10 +14,10 @@ struct GovernmentServicesView: View {
                     .padding(.bottom, 4)
 
                 List {
-                    ForEach($viewModel.services.indices, id: \.self) { index in
-                        ServiceCard(service: $viewModel.services[index])
-                        if viewModel.services[index].isExpanded {
-                            ServiceDetails(service: $viewModel.services[index], path: $path)
+                    ForEach($viewModel.services) { $service in
+                        ServiceCard(service: $service)
+                        if service.isExpanded {
+                            ServiceDetails(service: $service, path: $path)
                         }
                     }
                 }
@@ -27,6 +26,12 @@ struct GovernmentServicesView: View {
             }
             .onAppear {
                 viewModel.fetchServiceRequests()
+            }
+            .onChange(of: path) { oldValue, newValue in
+                if newValue.isEmpty {
+                    // Collapse all services when returning to the main page
+                    viewModel.collapseAllServices()
+                }
             }
             .navigationDestination(for: SubService.self) { subService in
                 SubServiceDetailView(subService: subService, path: $path)

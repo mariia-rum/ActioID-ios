@@ -16,6 +16,12 @@ class GovernmentServicesViewModel: ObservableObject {
             ]
         }
     }
+
+    func collapseAllServices() {
+        for index in services.indices {
+            services[index].isExpanded = false
+        }
+    }
 }
 
 struct Service: Identifiable {
@@ -30,4 +36,3 @@ struct SubService: Identifiable, Hashable {
     let id = UUID()
     let name: String
 }
-
