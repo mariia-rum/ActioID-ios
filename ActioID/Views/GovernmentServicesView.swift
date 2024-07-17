@@ -101,7 +101,6 @@ struct SubServiceCard: View {
                 .font(.headline)
                 .foregroundColor(.primary)
             Spacer()
-            Image(systemName: "chevron.right")
                 .font(.headline)
                 .foregroundColor(.black)
         }
