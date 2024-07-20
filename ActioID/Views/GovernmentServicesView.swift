@@ -48,7 +48,7 @@ struct ServiceCard: View {
     var body: some View {
         HStack {
             Text(service.name)
-                .font(.headline)
+                .font(.title3).bold()
             Spacer()
             Button(action: {
                 withAnimation(.easeInOut(duration: 0.3)) {
@@ -83,11 +83,14 @@ struct ServiceDetails: View {
                         .cornerRadius(16)
                         .shadow(radius: 2)
                         .padding(.vertical, 3)
+                        
+                    
                 }
             }
         }
         .padding(.horizontal)
         .padding(.top, 8)
+        
     }
 }
 
@@ -98,16 +101,17 @@ struct SubServiceCard: View {
     var body: some View {
         HStack {
             Text(subService.name)
-                .font(.headline)
+                .font(.headline).bold()
                 .foregroundColor(.primary)
             Spacer()
-                .font(.headline)
                 .foregroundColor(.black)
         }
         .padding()
         .background(Color(.systemGray6))
         .cornerRadius(8)
         .padding(.vertical, 3)
+
+        
     }
 }
 

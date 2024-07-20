@@ -11,34 +11,33 @@ struct NewsFeedView: View {
         }
     }
 
-    private let lightBackgroundColor = Color(red: 0xED/255, green: 0xE6/255, blue: 0xD7/255).opacity(0.2) // Predefined color
 
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 VStack {
-                    Spacer().frame(height: 50)
+                    Spacer().frame(height: 10)
                     Text("News")
                         .font(.largeTitle).bold()
                     SearchBar(text: $searchText)
-                        .padding(.horizontal, 20)
-                        .frame(height: 60)
+                        .padding(.horizontal, 15)
+                        .padding(.bottom, 10)
                         .background(Color(.clear))
                 }
-                .padding(.horizontal, 20)
+               
                 
                 ScrollView {
                     LazyVStack(alignment: .leading) {
                         ForEach(filteredArticles) { article in
                             NavigationLink(destination: ArticleDetailsView(article: article)) {
                                 ArticleRow(article: article)
-                                    .background(lightBackgroundColor)
+                                    .background(Color.white)
                                     .cornerRadius(10)
                                     .padding(.horizontal, 10)
                             }
                         }
                     }
-                    .background(lightBackgroundColor)
+                    .background(Color.white)
                 }
             }
             .background(Color.white)
@@ -71,11 +70,11 @@ struct ArticleRow: View {
 
             VStack(alignment: .leading) {
                 Text(article.title)
-                    .font(.headline)
-                    .padding(.top, 4)
                     .multilineTextAlignment(.leading)
                     .frame(width: 330, alignment: .leading)
                     .lineLimit(nil)
+                    .font(.callout)
+                    .foregroundColor(.black)
 
                 Text(article.pubDate)
                     .font(.subheadline)

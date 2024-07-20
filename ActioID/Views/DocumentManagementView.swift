@@ -25,6 +25,8 @@ struct DocumentManagementView: View {
                 Text("Documents")
                     .font(.largeTitle)
                     .bold()
+                    .padding(.bottom, 50)
+    
                 
                 TabView(selection: $currentIndex) {
                     ForEach(viewModel.documents.indices, id: \.self) { index in

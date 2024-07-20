@@ -18,6 +18,10 @@
 		18594E042C29AC52003DD43A /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18594E032C29AC52003DD43A /* FirestoreService.swift */; };
 		18594E062C29AEFC003DD43A /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18594E052C29AEFC003DD43A /* NewsArticle.swift */; };
 		18594E082C2BFBF2003DD43A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18594E072C2BFBF2003DD43A /* UserService.swift */; };
+		1895D44B2C4B881600E8C3E9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895D44A2C4B881600E8C3E9 /* MessagesView.swift */; };
+		1895D44D2C4B883000E8C3E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895D44C2C4B882F00E8C3E9 /* SettingsView.swift */; };
+		1895D44F2C4B884400E8C3E9 /* CustomerSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895D44E2C4B884300E8C3E9 /* CustomerSupportView.swift */; };
+		1895D4512C4B885600E8C3E9 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895D4502C4B885600E8C3E9 /* FAQView.swift */; };
 		1897F58F2C2714CD00D851E6 /* ActioIDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F58E2C2714CD00D851E6 /* ActioIDApp.swift */; };
 		1897F5912C2714CD00D851E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897F5902C2714CD00D851E6 /* ContentView.swift */; };
 		1897F5932C2714CE00D851E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1897F5922C2714CE00D851E6 /* Assets.xcassets */; };
@@ -111,6 +115,10 @@
 		18594E032C29AC52003DD43A /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		18594E052C29AEFC003DD43A /* NewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
 		18594E072C2BFBF2003DD43A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		1895D44A2C4B881600E8C3E9 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		1895D44C2C4B882F00E8C3E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1895D44E2C4B884300E8C3E9 /* CustomerSupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSupportView.swift; sourceTree = "<group>"; };
+		1895D4502C4B885600E8C3E9 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		1897F58E2C2714CD00D851E6 /* ActioIDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActioIDApp.swift; sourceTree = "<group>"; };
 		1897F5902C2714CD00D851E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1897F5922C2714CE00D851E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -296,6 +304,10 @@
 				1897F5D82C283C0400D851E6 /* OfflineAccessView.swift */,
 				1897F5DA2C283C1000D851E6 /* MainTabView.swift */,
 				1800F68B2C42DC6400842F65 /* SubServiceDetailView.swift */,
+				1895D44A2C4B881600E8C3E9 /* MessagesView.swift */,
+				1895D44C2C4B882F00E8C3E9 /* SettingsView.swift */,
+				1895D44E2C4B884300E8C3E9 /* CustomerSupportView.swift */,
+				1895D4502C4B885600E8C3E9 /* FAQView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -562,11 +574,14 @@
 				18E05DA62C32F80900352D13 /* DocumentCardView.swift in Sources */,
 				1897F5E12C283C4400D851E6 /* DocumentManagementViewModel.swift in Sources */,
 				1897F5CB2C283BB600D851E6 /* RegistrationView.swift in Sources */,
+				1895D44B2C4B881600E8C3E9 /* MessagesView.swift in Sources */,
 				1897F5CD2C283BC100D851E6 /* NewsFeedView.swift in Sources */,
 				1897F5E72C283C6600D851E6 /* OfflineAccessViewModel.swift in Sources */,
+				1895D44F2C4B884400E8C3E9 /* CustomerSupportView.swift in Sources */,
 				1897F5D92C283C0400D851E6 /* OfflineAccessView.swift in Sources */,
 				1897F5D72C283BF700D851E6 /* AccountManagementView.swift in Sources */,
 				1897F58F2C2714CD00D851E6 /* ActioIDApp.swift in Sources */,
+				1895D44D2C4B883000E8C3E9 /* SettingsView.swift in Sources */,
 				1897F5DD2C283C2500D851E6 /* RegistrationViewModel.swift in Sources */,
 				1897F5EF2C283CA600D851E6 /* AuthService.swift in Sources */,
 				18594E082C2BFBF2003DD43A /* UserService.swift in Sources */,
@@ -577,6 +592,7 @@
 				18594E042C29AC52003DD43A /* FirestoreService.swift in Sources */,
 				18594E062C29AEFC003DD43A /* NewsArticle.swift in Sources */,
 				1897F5F32C283CC100D851E6 /* Extensions.swift in Sources */,
+				1895D4512C4B885600E8C3E9 /* FAQView.swift in Sources */,
 				1897F5E32C283C5000D851E6 /* GovernmentServicesViewModel.swift in Sources */,
 				1897F5E52C283C5B00D851E6 /* AccountManagementViewModel.swift in Sources */,
 				1897F5D32C283BE200D851E6 /* GovernmentServicesView.swift in Sources */,

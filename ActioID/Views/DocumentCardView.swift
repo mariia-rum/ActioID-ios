@@ -110,6 +110,7 @@ struct DocumentCardView: View {
             }
         }
         .padding()
+        .font(.callout)
     }
 
     private var cardTitle: String {
