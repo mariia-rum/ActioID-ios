@@ -64,6 +64,7 @@ struct ArticleRow: View {
                     .cornerRadius(8)
                     .padding(4)
                     .padding(.top, 4)
+                    .shadow(radius: 1)
             } placeholder: {
                 ProgressView().frame(width: 50, height: 50)
             }
@@ -112,7 +113,7 @@ struct SearchBar: UIViewRepresentable {
     func makeUIView(context: Context) -> UISearchBar {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.delegate = context.coordinator
-        searchBar.placeholder = "Search Articles"
+        searchBar.placeholder = "Search News Here"
         searchBar.searchBarStyle = .minimal
         searchBar.backgroundImage = UIImage()
         return searchBar
