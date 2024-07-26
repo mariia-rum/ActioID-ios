@@ -18,6 +18,7 @@
 		18594E042C29AC52003DD43A /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18594E032C29AC52003DD43A /* FirestoreService.swift */; };
 		18594E062C29AEFC003DD43A /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18594E052C29AEFC003DD43A /* NewsArticle.swift */; };
 		18594E082C2BFBF2003DD43A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18594E072C2BFBF2003DD43A /* UserService.swift */; };
+		1862EEFC2C4D5D9700539463 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862EEFB2C4D5D9700539463 /* CustomModifiers.swift */; };
 		186C81262C4C182C0085F45B /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C81252C4C182C0085F45B /* KeychainHelper.swift */; };
 		1895D44B2C4B881600E8C3E9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895D44A2C4B881600E8C3E9 /* MessagesView.swift */; };
 		1895D44D2C4B883000E8C3E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895D44C2C4B882F00E8C3E9 /* SettingsView.swift */; };
@@ -118,6 +119,7 @@
 		18594E032C29AC52003DD43A /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		18594E052C29AEFC003DD43A /* NewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
 		18594E072C2BFBF2003DD43A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		1862EEFB2C4D5D9700539463 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		186C81252C4C182C0085F45B /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		1895D44A2C4B881600E8C3E9 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		1895D44C2C4B882F00E8C3E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			children = (
 				1897F5F22C283CC100D851E6 /* Extensions.swift */,
 				186C81252C4C182C0085F45B /* KeychainHelper.swift */,
+				1862EEFB2C4D5D9700539463 /* CustomModifiers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				186C81262C4C182C0085F45B /* KeychainHelper.swift in Sources */,
 				1897F5E52C283C5B00D851E6 /* AccountManagementViewModel.swift in Sources */,
 				1895D4532C4BF47200E8C3E9 /* LoginView.swift in Sources */,
+				1862EEFC2C4D5D9700539463 /* CustomModifiers.swift in Sources */,
 				1897F5D32C283BE200D851E6 /* GovernmentServicesView.swift in Sources */,
 				1897F5DF2C283C3400D851E6 /* NewsFeedViewModel.swift in Sources */,
 			);

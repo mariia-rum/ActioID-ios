@@ -6,7 +6,7 @@ enum Tab: String, CaseIterable {
     case documents
     case services
     case profile
-    
+
     var title: String {
         switch self {
         case .home: return "Home"
@@ -15,7 +15,7 @@ enum Tab: String, CaseIterable {
         case .profile: return "Profile"
         }
     }
-    
+
     var icon: String {
         switch self {
         case .home: return "house"
@@ -29,6 +29,7 @@ enum Tab: String, CaseIterable {
 struct MainTabView: View {
     @StateObject private var viewModel = AuthViewModel()
     @State private var selectedTab: Tab = .home
+    @State private var isLoginSuccessful = false
     private let selectedTabColor = Color(hex: "#00008B")
 
     private var fillImage: String {
@@ -37,7 +38,7 @@ struct MainTabView: View {
 
     var body: some View {
         Group {
-            if viewModel.isAuthenticated {
+            if isLoginSuccessful {
                 VStack {
                     switch selectedTab {
                     case .home:
@@ -49,7 +50,7 @@ struct MainTabView: View {
                     case .profile:
                         AccountManagementView()
                     }
-                    
+
                     HStack {
                         ForEach(Tab.allCases, id: \.rawValue) { tab in
                             Spacer()
@@ -66,6 +67,7 @@ struct MainTabView: View {
                                             selectedTab = tab
                                         }
                                     }
+
                                 Text(tab.title)
                                     .font(.caption)
                                     .foregroundColor(.black)
@@ -78,11 +80,14 @@ struct MainTabView: View {
                 }
                 .edgesIgnoringSafeArea(.bottom)
             } else {
-                LoginView()
+                LoginView(isLoginSuccessful: $isLoginSuccessful)
+                    .environmentObject(viewModel)
             }
         }
         .onAppear {
-            viewModel.isAuthenticated = Auth.auth().currentUser != nil
+            if Auth.auth().currentUser != nil {
+                isLoginSuccessful = true
+            }
         }
     }
 }
@@ -92,3 +97,4 @@ struct MainTabView_Previews: PreviewProvider {
         MainTabView()
     }
 }
+ 
