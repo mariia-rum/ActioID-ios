@@ -8,12 +8,10 @@ ActioID is a comprehensive digital identity management application designed to s
 ## Access the Pitch Deck
 For a detailed presentation, visit: [ActioID Pitch Deck](https://app.pitch.com/app/presentation/45fa7cfd-4963-4f7e-b12b-551c06ea8e01/508b94b2-a380-4f1d-bba5-7721a4e294d5/2a53601f-bf37-422b-9006-9337c6be3cf2).
 
-## Design Prototypes
+## Design Prototypes 
+For a detailed look at the design and user flow, access the Figma prototypes here: [ActioID Figma Design](https://www.figma.com/design/DTnQ4nQ6BhjKOCspGC8Lb3/ActioIDPrototype?node-id=0-1&p=f&t=6v41tH8o9hNgeq3I-0).
 
-For a detailed look at the design and user flow, access the Figma prototypes here:
-[ActioID Figma Design Files](https://www.figma.com/design/DTnQ4nQ6BhjKOCspGC8Lb3/ActioIDPrototype?node-id=0-1&p=f&t=6v41tH8o9hNgeq3I-0).
 ---
-
 ## Features
 
 ### 1. **User Registration**
